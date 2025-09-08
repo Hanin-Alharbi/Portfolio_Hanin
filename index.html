@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hanin Alharbi • Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== Top Nav ===== -->
+  <header class="nav">
+    <div class="container nav__wrap">
+      <a class="brand" href="#">
+        <span class="brand__dot"></span>
+        Hanin Alharbi
+      </a>
+
+      <input id="menu-toggle" type="checkbox" />
+      <label class="burger" for="menu-toggle">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="menu">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>Hanin&nbsp;Alharbi</h1>
+        <div class="title-pill">Full-Stack Developer • AI Developer</div>
+        <p class="lead">
+          I specialize in building secure, scalable full-stack web applications and ML-powered features.
+          With a focus on performance, clean architecture, and developer ergonomics, I turn complex ideas into smooth, real-world products.
+        </p>
+        <!--
+        <div class="cta">
+          <a class="btn" href="#contact"><i class="ri-chat-1-line"></i> Let’s Work Together</a>
+          <a class="btn btn--ghost" href="Hanin_Alharbi_Resume.pdf" download>
+            <i class="ri-download-2-line"></i> Download Resume
+          </a>
+        </div>
+        -->
+      </div>
+    </div>
+
+    <!-- soft gradient decor -->
+    <span class="glow glow--1"></span>
+    <span class="glow glow--2"></span>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section__title">About Me</h2>
+
+      <div class="card">
+        <h3 class="card__title">Passionate Developer & Problem Solver</h3>
+        <p>
+          Hi! I’m Hanin Alharbi, a full-stack developer with a passion for AI and clean, efficient architecture.
+          I build scalable systems end-to-end, design smart solutions, and craft maintainable code that lasts.
+        </p>
+        <p>
+          I enjoy working with Python, FastAPI, PostgreSQL, Docker, and cloud services, and I love
+          bringing intelligence into products through practical machine learning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Education ===== -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section__title">Education</h2>
+
+      <div class="timeline">
+        <article class="timeline__item card">
+          <div class="timeline__icon"><i class="ri-graduation-cap-line"></i></div>
+          <div class="timeline__body">
+            <h3>Bachelor’s in Computer Science</h3>
+            <p class="muted">King Abdulaziz University, Faculty of Computing and Information Technology</p>
+            <div class="chips">
+              <span class="chip"><i class="ri-calendar-line"></i> 2021–2025</span>
+              <span class="chip"><i class="ri-star-smile-line"></i> 4.7 GPA</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience ===== -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section__title">Experience</h2>
+
+      <div class="timeline">
+        <article class="timeline__item card">
+          <div class="timeline__icon"><i class="ri-computer-line"></i></div>
+          <div class="timeline__body">
+            <h3>Computer Science Teacher</h3>
+            <p class="muted">Tawwaq Company — Jeddah, SA</p>
+            <div class="chips">
+              <span class="chip"><i class="ri-calendar-line"></i> May 2024 – Nov 2024</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Delivered engaging lessons on core computing concepts, including robotics, drones, and related fields. </li>
+              <li>Planned, organized, and supervised coding competitions and robotics challenges.</li>
+              <li>Designed and facilitated hands-on activities and experiments to enhance understanding.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item card">
+          <div class="timeline__icon"><i class="ri-tools-line"></i></div>
+          <div class="timeline__body">
+            <h3>Information Technology Department Intern</h3>
+            <p class="muted">Ministry of Education — Jeddah, SA</p>
+            <div class="chips">
+              <span class="chip"><i class="ri-calendar-line"></i> May 2024 – Aug 2024</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Implemented AI-driven tools optimize performance, automate tasks, and enhance decision-making.</li>
+              <li>Integrated data with Tableau to build dynamic dashboards for actionable insights.</li>
+              <li>Delivered presentations on AI concepts and tools, training IT staff on workflow integration.</li>
+              <li>Authored technical documentation to standardize and streamline IT processes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item card">
+          <div class="timeline__icon"><i class="ri-team-line"></i></div>
+          <div class="timeline__body">
+            <h3>Member of Social Committee</h3>
+            <p class="muted">Faculty of Computing & IT — King Abdulaziz University</p>
+            <div class="chips">
+              <span class="chip"><i class="ri-calendar-line"></i> Feb 2022 – Dec 2023</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Collaborated with peers to plan workshops, guest talks, and social activities</li>
+              <li>Facilitated communication between students and faculty through organized events</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2 class="section__title">Skills & Expertise</h2>
+
+      <div class="skills">
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-code-box-line"></i></div>
+          <div class="skill__name">Python</div>
+          <div class="skill__level level--advanced">Advanced</div>
+        </div>
+
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-server-line"></i></div>
+          <div class="skill__name">FastAPI</div>
+          <div class="skill__level level--advanced">Advanced</div>
+        </div>
+
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-database-2-line"></i></div>
+          <div class="skill__name">PostgreSQL</div>
+          <div class="skill__level level--intermediate">Intermediate</div>
+        </div>
+
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-cpu-line"></i></div>
+          <div class="skill__name">Machine Learning</div>
+          <div class="skill__level level--intermediate">Intermediate</div>
+        </div>
+
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-git-branch-line"></i></div>
+          <div class="skill__name">Git</div>
+          <div class="skill__level level--advanced">Advanced</div>
+        </div>
+
+        <div class="skill card">
+          <div class="skill__icon"><i class="ri-cloud-line"></i></div>
+          <div class="skill__name">Cloud & Docker</div>
+          <div class="skill__level level--intermediate">Intermediate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section__title">Projects</h2>
+
+      <div class="projects">
+        <article class="project card">
+          <h3>EDAR</h3>
+          <p>AI-based analysis of retinal measurements for early detection of Alzheimer’s Disease.</p>
+          <a class="link" href="project.html?project=EDAR"><i class="ri-external-link-line"></i> View</a>
+        </article>
+
+        <article class="project card">
+          <h3>MURSED</h3>
+          <p>Smart sewer monitoring using fiber-optic sensing and AI to detect leaks and blockages.</p>
+          <a class="link" href="project.html?project=MURSED"><i class="ri-external-link-line"></i> View</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section__title">Contact</h2>
+      <div class="card contact">
+        <p><i class="ri-mail-line"></i> <a href="mailto:Hanin.m.h.alharbi@gmail.com">Hanin.m.h.alharbi@gmail.com</a></p>
+        <p><i class="ri-phone-line"></i> <a href="tel:+966501918563">050-191-8563</a></p>
+        <p><i class="ri-linkedin-box-line"></i> <a target="_blank" href="https://linkedin.com/in/Hanin-M-Alharbi">Hanin-M-Alharbi</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="y"></span> Hanin Alharbi — All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

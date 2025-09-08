@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MURSED • Project Details</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Swiper viewer — same behavior as EDAR */
+    .swiper { width: 100%; max-width: 900px; margin: 0 auto; overflow: hidden; }
+    .swiper-slide { display: flex; justify-content: center; align-items: center; }
+    .swiper-slide img { max-width: 100%; max-height: 520px; object-fit: contain; border-radius: 10px; }
+    .swiper-button-next, .swiper-button-prev { color: var(--brand); }
+
+    /* Meta & details – same visual language */
+    .meta { display:flex; gap:.6rem; flex-wrap:wrap; margin: 1rem 0 1.2rem; }
+    .badge { display:inline-flex; align-items:center; gap:.35rem; padding:.35rem .6rem; border-radius:999px; font-weight:600; font-size:.85rem; background:#0f1d3b; border:1px solid var(--border); color:#cfe0ff; }
+    .grid-2 { display:grid; gap:1rem; grid-template-columns:1fr 1fr; }
+    @media (max-width:860px){ .grid-2 { grid-template-columns: 1fr; } }
+
+    details { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:.9rem 1rem; }
+    details + details { margin-top:.8rem; }
+    summary { cursor:pointer; font-weight:700; color:#dfe6ff; list-style:none; display:flex; align-items:center; gap:.5rem; }
+    summary::-webkit-details-marker { display:none; }
+    summary i { color:var(--brand); }
+    .details-body { margin-top:.7rem; color:#c4cdef; line-height:1.6; }
+    .details-body ul, .details-body ol { margin-left:1.1rem; margin-top:.3rem; }
+  </style>
+</head>
+<body>
+  <!-- ===== Top Nav ===== -->
+  <header class="nav">
+    <div class="container nav__wrap">
+      <a class="brand" href="index.html">
+        <span class="brand__dot"></span>
+        Hanin Alharbi
+      </a>
+    </div>
+  </header>
+
+  <!-- ===== Project Details ===== -->
+  <section id="project-details" class="section">
+    <div class="container">
+      <h2 class="section__title">MURSED</h2>
+      <p class="muted" id="project-description">
+        Smart sewer monitoring using fiber-optic sensing and AI to detect leaks and blockages.
+      </p>
+
+      <!-- Meta badges -->
+      <div class="meta">
+        <span class="badge"><i class="ri-apps-2-line"></i> Full-Stack + Sensing</span>
+        <span class="badge"><i class="ri-tools-line"></i> Frontend: JS • Backend: Python</span>
+      </div>
+
+      <!-- Slides FIRST (arrows-only; no drag) -->
+      <div class="swiper" aria-label="MURSED slides">
+        <div class="swiper-wrapper" id="mursed-slides">
+          <!-- JS will inject <div class="swiper-slide"><img ...></div> here -->
+        </div>
+        <div class="swiper-button-next" aria-label="Next slide"></div>
+        <div class="swiper-button-prev" aria-label="Previous slide"></div>
+      </div>
+
+      <!-- Rich Info (same sections style as EDAR) -->
+      <div id="project-info" style="margin-top:1.4rem" class="grid-2">
+        <div>
+          <details open>
+            <summary><i class="ri-error-warning-line"></i> Background & Problem</summary>
+            <div class="details-body">
+              <p>Urban sewer networks suffer from leaks and blockages that can damage infrastructure and create environmental/health hazards. Conventional monitoring is periodic and reactive, so anomalies are discovered late and repairs are costly.</p>
+              <ul>
+                <li>High cost from emergency repairs and collateral damage.</li>
+                <li>Public health risk due to leaks and potential toxic gas exposure.</li>
+                <li>Poor visibility across long pipes; limited ability to pinpoint issues quickly.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary><i class="ri-flag-2-line"></i> Proposed Solution & Aims</summary>
+            <div class="details-body">
+              <p><strong>MURSED</strong> pairs <em>fiber-optic sensing</em> with <em>AI-based anomaly detection</em> to continuously monitor pipelines, detect/locate events (leaks, blockages), and support proactive maintenance via a web dashboard.</p>
+              <ul>
+                <li><strong>Sustainability</strong>: reduce contamination/overflows.</li>
+                <li><strong>Accuracy & Efficiency</strong>: quicker, more precise localization → faster fixes.</li>
+                <li><strong>Economic value</strong>: shift from reactive to predictive maintenance.</li>
+              </ul>
+            </div>
+          </details>
+        </div>
+
+        <div>
+          <details>
+            <summary><i class="ri-database-2-line"></i> Data & Sensing Approach</summary>
+            <div class="details-body">
+              <p><strong>Fiber-optic network</strong> along the pipelines captures signals (vibration, strain, acoustic signatures). The backend ingests streams, the AI detects patterns consistent with ruptures or clogs, and the app estimates their location along the line.</p>
+              <ul>
+                <li>Continuous, long-distance monitoring suited for municipal scale.</li>
+                <li>Event detection + <em>localization</em> to guide field teams.</li>
+                <li>Dashboard concepts: anomaly list with priority, map view, auto-generated repair plan.</li>
+              </ul>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="y"></span> Hanin Alharbi — All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Slides (add more images here when you have them)
+    const slides = [
+      "screenshots/7.png",
+      "screenshots/8.png",
+      "screenshots/9.png"
+    ];
+
+    // Build slides
+    const wrap = document.getElementById('mursed-slides');
+    slides.forEach(src => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide';
+      slide.innerHTML = `<img src="${src}" alt="MURSED slide" />`;
+      wrap.appendChild(slide);
+    });
+
+    // Init Swiper (arrows only; no swipe/drag; one slide per view)
+    new Swiper('.swiper', {
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      loop: false,
+      allowTouchMove: false,
+      slidesPerView: 1
+    });
+  </script>
+</body>
+</html>

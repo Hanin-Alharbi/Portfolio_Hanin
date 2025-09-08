@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Details</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .swiper {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .swiper-slide img {
+      max-width: 100%;
+      max-height: 400px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev { color: var(--brand); }
+
+    .meta { display: flex; gap: .6rem; flex-wrap: wrap; margin: 1rem 0 1.2rem; }
+    .badge {
+      display: inline-flex; align-items: center; gap:.35rem;
+      padding:.35rem .6rem; border-radius:999px; font-weight:600; font-size:.85rem;
+      background:#0f1d3b; border:1px solid var(--border); color:#cfe0ff;
+    }
+    .grid-2 { display:grid; gap:1rem; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 860px){ .grid-2 { grid-template-columns: 1fr; } }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: .9rem 1rem;
+    }
+    details + details { margin-top: .8rem; }
+    summary {
+      cursor: pointer; font-weight: 700; color: #dfe6ff;
+      list-style: none; display: flex; align-items: center; gap:.5rem;
+    }
+    summary::-webkit-details-marker { display:none; }
+    summary i { color: var(--brand); }
+    .details-body { margin-top:.7rem; color:#c4cdef; line-height:1.6; }
+    .details-body ul { margin-left: 1.1rem; margin-top:.3rem; }
+
+    .resources {
+      display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.8rem;
+    }
+    .resources a {
+      text-decoration:none; border:1px solid #2d3c66; padding:.45rem .7rem;
+      border-radius:10px; color:#e3ebff; display:inline-flex; align-items:center; gap:.35rem;
+      background:#0f1830;
+    }
+    .resources a:hover { background:#0e1b37; }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__wrap">
+      <a class="brand" href="index.html">
+        <span class="brand__dot"></span>
+        Hanin Alharbi
+      </a>
+    </div>
+  </header>
+
+  <section id="project-details" class="section">
+    <div class="container">
+      <h2 class="section__title" id="project-title">Project Title</h2>
+      <p id="project-description">Project description will appear here.</p>
+
+      <div class="meta" id="project-meta"></div>
+
+      <div class="swiper">
+        <div class="swiper-wrapper" id="project-screenshots"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+
+      <!-- Accordion Info -->
+      <div id="project-info" style="margin-top:1.4rem" class="grid-2">
+        <div>
+          <details open>
+            <summary><i class="ri-information-line"></i> Background & Problem</summary>
+            <div class="details-body" id="info-background"></div>
+          </details>
+          <details>
+            <summary><i class="ri-lightbulb-flash-line"></i> Proposed Solution & Aims</summary>
+            <div class="details-body" id="info-solution"></div>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary><i class="ri-database-2-line"></i> Data & Feature Engineering</summary>
+            <div class="details-body" id="info-data"></div>
+          </details>
+          <details>
+            <summary><i class="ri-links-line"></i> Resources</summary>
+            <div class="details-body" id="info-resources"></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="y"></span> Hanin Alharbi — All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const project = urlParams.get('project');
+
+    const projects = {
+      EDAR: {
+        title: "EDAR",
+        description: "AI-based analysis of retinal measurements for early detection of Alzheimer’s Disease.",
+        type: "Web-based AI System",
+        stack: ["Frontend: HTML/CSS/JS", "Backend: FastAPI + PostgreSQL", "AI Models"],
+        screenshots: ["screenshots/1.png","screenshots/2.png","screenshots/3.png",,"screenshots/4.png",,"screenshots/5.png","screenshots/6.png"],
+        backgroundHTML: `
+          <p>Alzheimer’s disease (AD) is one of the leading causes of dementia worldwide. 
+          Current diagnosis methods involve expensive and complex tests such as PET scans, 
+          MRI, or invasive cerebrospinal fluid analysis. Unfortunately, AD is usually diagnosed 
+          only after significant brain damage has already occurred, which limits treatment effectiveness.</p>
+          <p>In 2024, more than <strong>41 million dementia cases</strong> globally were undiagnosed. 
+          Detecting AD 5–20 years earlier could drastically improve treatment outcomes, 
+          patient care, and quality of life.</p>
+        `,
+        solutionHTML: `
+          <p><strong>EDAR</strong> is a web-based AI system designed to analyze 
+          <em>retinal thickness measurements</em> (Ganglion Cell Layer, Inner Plexiform Layer, RNFL) 
+          using machine learning models to assess the risk of AD.</p>
+          <ul>
+            <li><strong>Enhance Non-Invasive Diagnosis</strong>: Provide a quick, painless, and cost-effective alternative.</li>
+            <li><strong>Enable Early Detection</strong>: Identify retinal changes long before AD symptoms appear.</li>
+            <li><strong>Increase Accessibility</strong>: Integrate AI tools into standard ophthalmology practices.</li>
+          </ul>
+        `,
+        dataHTML: `
+          <p>The system works with structured <strong>OCT scan reports</strong> (ZEISS CIRRUS HD-OCT), 
+          which contain retinal thickness and optic nerve head metrics relevant for AD analysis.</p>
+          <ul>
+            <li>RNFL thickness by quadrant (OD & OS)</li>
+            <li>RNFL symmetry values</li>
+            <li>Optic disc metrics: rim area, disc area, cup-to-disc ratio, cup volume</li>
+            <li>Ganglion Cell + IPL thickness averages and minima (OD & OS)</li>
+            <li>Average RNFL thickness across both eyes</li>
+          </ul>
+          <p>After extraction, <strong>key clinical features</strong> such as Avg/Min GCL & IPL, Avg RNFL, 
+          along with metadata (Age, Gender), are used to train ML models.</p>
+        `,
+        resources: [
+          { href: "screenshots/EDAR_Poster.png", label: "Project Poster" },
+          { href: "screenshots/EDAR Banner.png", label: "Project Banner" }
+        ]
+      }
+    };
+
+    if (project && projects[project]) {
+      const p = projects[project];
+      document.getElementById('project-title').textContent = p.title;
+      document.getElementById('project-description').textContent = p.description;
+
+      const metaEl = document.getElementById('project-meta');
+      const addBadge = (text, icon) => {
+        const span = document.createElement('span');
+        span.className = 'badge';
+        span.innerHTML = `${icon ? `<i class="${icon}"></i>` : ''}${text}`;
+        metaEl.appendChild(span);
+      };
+      if (p.type) addBadge(p.type, 'ri-apps-2-line');
+      if (p.year) addBadge(p.year, 'ri-calendar-line');
+      if (p.stack) addBadge(p.stack.join(' • '), 'ri-tools-line');
+
+      const shots = document.getElementById('project-screenshots');
+      p.screenshots.forEach(src => {
+        const slide = document.createElement('div');
+        slide.classList.add('swiper-slide');
+        slide.innerHTML = `<img src="${src}" alt="${p.title} Screenshot" />`;
+        shots.appendChild(slide);
+      });
+
+      new Swiper('.swiper', {
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        loop: false,
+        allowTouchMove: false,
+        slidesPerView: 1
+      });
+
+      document.getElementById('info-background').innerHTML = p.backgroundHTML;
+      document.getElementById('info-solution').innerHTML = p.solutionHTML;
+      document.getElementById('info-data').innerHTML = p.dataHTML;
+
+      const resEl = document.getElementById('info-resources');
+      const wrap = document.createElement('div');
+      wrap.className = 'resources';
+      p.resources.forEach(r => {
+        const a = document.createElement('a');
+        a.href = r.href;
+        a.target = '_blank';
+        a.innerHTML = `<i class="ri-external-link-line"></i> ${r.label}`;
+        wrap.appendChild(a);
+      });
+      resEl.appendChild(wrap);
+    } else {
+      document.getElementById('project-title').textContent = "Project Not Found";
+      document.getElementById('project-description').textContent = "The requested project could not be found.";
+    }
+  </script>
+</body>
+</html>
